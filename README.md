@@ -13,4 +13,4 @@ Requirements
 ![Error while duplicating primary contatc ](https://github.com/felipeportugalll/OSF-Exercises/assets/108902942/206f72a3-2d3d-4eb0-a775-8a42ab6e473a)
 
 
-[screen-capture (2).webm](https://github.com/felipeportugalll/OSF-Exercises/assets/108902942/9357a4c8-c1c9-4610-b38e-3502ff3154c0)
+[Uploading screen-capture (3).webm…]()
