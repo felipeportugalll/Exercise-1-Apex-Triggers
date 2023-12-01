@@ -1,0 +1,17 @@
+trigger ContactTrigger on Contact (before insert, before update) {
+    for (Contact contact : Trigger.new) {
+        if (contact.AccountId != null) {
+            List<Contact> primaryContacts = [SELECT Id FROM Contact WHERE AccountId = :contact.AccountId AND Is_Primary_Contact__c = true];
+            if (primaryContacts.size() > 0 && contact.Is_Primary_Contact__c == true) {
+                contact.addError('An account can only have one primary contact.');
+            } else if (contact.Is_Primary_Contact__c == true) {
+                Set<Id> accountIds = new Set<Id>();
+                for (Contact c : [SELECT Id, AccountId FROM Contact WHERE AccountId = :contact.AccountId]) {
+                    accountIds.add(c.AccountId);
+                }
+                String primaryContactPhone = contact.Primary_Contact_Phone__c;
+                ContactHelper.updatePrimaryContactPhone(accountIds, primaryContactPhone);
+            }
+        }
+    }
+}
