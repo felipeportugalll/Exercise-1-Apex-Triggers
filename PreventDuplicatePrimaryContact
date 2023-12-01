@@ -1,0 +1,5 @@
+AND(
+Is_Primary_Contact__c = TRUE,
+PRIORVALUE(Is_Primary_Contact__c) = TRUE,
+NOT(ISNEW())
+)
