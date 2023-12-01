@@ -11,5 +11,5 @@ Requirements
 
 
 ![Error while duplicating primary contatc ](https://github.com/felipeportugalll/OSF-Exercises/assets/108902942/206f72a3-2d3d-4eb0-a775-8a42ab6e473a)
-![Apex Trigger Exercise ERROR ](https://github.com/felipeportugalll/OSF-Exercises/assets/108902942/38824747-247b-4acb-894b-2c37d8a1df86)
+
 [Apex trigger.webm](https://github.com/felipeportugalll/OSF-Exercises/assets/108902942/6a026cd9-a96b-4136-b58c-6b203a4d088d)
