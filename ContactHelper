@@ -1,0 +1,18 @@
+public class ContactHelper {
+    @future
+    public static void updatePrimaryContactPhone(Set<Id> accountIds, String primaryContactPhone) {
+        List<Contact> contactsToUpdate = [SELECT Id, AccountId FROM Contact WHERE AccountId IN :accountIds];
+        List<Contact> contactsToUpdateWithPhone = new List<Contact>();
+        for (Contact contact : contactsToUpdate) {
+            if (contact.Phone != primaryContactPhone) {
+                contact.Phone = primaryContactPhone;
+                contactsToUpdateWithPhone.add(contact);
+            }
+        }
+        try {
+            update contactsToUpdateWithPhone;
+        } catch (Exception e) {
+            System.debug('Error updating contacts: ' + e.getMessage());
+        }
+    }
+}
